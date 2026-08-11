@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Sandwich Shop — Ballinger, Texas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#eee4d0;
+  --paper2:#e2d5bb;
+  --cream:#f8f1e2;
+  --ink:#29211e;
+  --rust:#b33b2e;
+  --rust2:#8d2b22;
+  --mustard:#d7a02f;
+  --green:#48633f;
+  --line:#c8b698;
+  --white:#fffaf0;
+  --shadow:0 18px 45px rgba(41,33,30,.16);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Fraunces",serif;
+  font-size:17px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
+  opacity:.035;
+  background-image:
+    radial-gradient(circle, #000 1px, transparent 1px);
+  background-size:7px 7px;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1160px,92%);
+  margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(238,228,208,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:2px solid var(--ink);
+}
+
+nav{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  width:53px;
+  height:53px;
+  border:2px solid var(--ink);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-family:"Anton";
+  font-size:9px;
+  line-height:1.05;
+  transform:rotate(-8deg);
+  background:var(--cream);
+  box-shadow:3px 3px 0 var(--mustard);
+}
+
+.brand-title{
+  font-family:"Anton";
+  font-size:21px;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.brand-sub{
+  font-family:"Space Mono";
+  color:var(--rust);
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-top:4px;
+}
+
+.navlinks{
+  display:flex;
+  gap:30px;
+  font-family:"Space Mono";
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.navlinks a{
+  position:relative;
+}
+
+.navlinks a:after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0;
+  height:2px;
+  background:var(--rust);
+  transition:.3s;
+}
+
+.navlinks a:hover:after{
+  width:100%;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:13px 21px;
+  border:2px solid var(--ink);
+  font-family:"Space Mono";
+  font-size:12px;
+  text-transform:uppercase;
+  transition:.25s;
+  cursor:pointer;
+}
+
+.btn-red{
+  background:var(--rust);
+  color:white;
+  border-color:var(--rust);
+}
+
+.btn-red:hover{
+  background:var(--rust2);
+  transform:translate(-3px,-3px);
+  box-shadow:5px 5px 0 var(--ink);
+}
+
+.btn-light:hover{
+  transform:translate(-3px,-3px);
+  box-shadow:5px 5px 0 var(--rust);
+}
+
+.menu-toggle{
+  display:none;
+  border:0;
+  background:none;
+  font-size:27px;
+  cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:85px 0 70px;
+  overflow:hidden;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:70px;
+}
+
+.rating{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:9px 15px;
+  border:2px solid var(--ink);
+  background:var(--cream);
+  box-shadow:4px 4px 0 var(--mustard);
+  font-family:"Space Mono";
+  font-size:11px;
+  margin-bottom:25px;
+  animation:floatBadge 3s ease-in-out infinite;
+}
+
+.stars{
+  color:var(--rust);
+  letter-spacing:2px;
+}
+
+@keyframes floatBadge{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
+}
+
+.hero h1{
+  font-family:"Anton";
+  font-size:clamp(55px,8vw,100px);
+  line-height:.88;
+  text-transform:uppercase;
+  letter-spacing:.01em;
+  transform:rotate(-1.5deg);
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--rust);
+}
+
+.hero-text{
+  max-width:570px;
+  margin:25px 0 30px;
+  font-size:19px;
+  color:#51443d;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-bottom:30px;
+}
+
+.hero-info{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  font-family:"Space Mono";
+  font-size:11px;
+  color:#66594f;
+}
+
+.hero-info strong{
+  color:var(--ink);
+}
+
+/* HERO IMAGE */
+
+.hero-photo{
+  position:relative;
+  transform:rotate(2deg);
+}
+
+.hero-photo img{
+  height:500px;
+  object-fit:cover;
+  border:3px solid var(--ink);
+  box-shadow:15px 15px 0 var(--rust);
+}
+
+.photo-note{
+  position:absolute;
+  bottom:-22px;
+  left:-20px;
+  background:var(--mustard);
+  border:2px solid var(--ink);
+  padding:12px 18px;
+  font-family:"Caveat";
+  font-size:24px;
+  transform:rotate(-5deg);
+  box-shadow:4px 4px 0 var(--ink);
+}
+
+/* =========================
+   INFO STRIP
+========================= */
+
+.info-strip{
+  background:var(--paper2);
+  border-top:2px solid var(--ink);
+  border-bottom:2px solid var(--ink);
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.info-box{
+  padding:25px 20px;
+  border-right:1px dashed var(--line);
+}
+
+.info-box:last-child{
+  border-right:0;
+}
+
+.info-label{
+  font-family:"Space Mono";
+  color:var(--rust);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  display:block;
+  margin-bottom:6px;
+}
+
+.info-value{
+  font-size:16px;
+  font-weight:600;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+  padding:100px 0;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--rust);
+  font-family:"Space Mono";
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+}
+
+.eyebrow:before{
+  content:"";
+  width:25px;
+  height:2px;
+  background:currentColor;
+}
+
+.section-head{
+  max-width:680px;
+  margin-bottom:50px;
+}
+
+.section-head h2{
+  font-family:"Anton";
+  font-size:clamp(40px,6vw,65px);
+  text-transform:uppercase;
+  line-height:.95;
+  margin-top:12px;
+}
+
+.section-head p{
+  margin-top:17px;
+  color:#5b4d44;
+}
+
+/* =========================
+   POPULAR
+========================= */
+
+.popular{
+  background:var(--ink);
+  color:var(--paper);
+}
+
+.popular .eyebrow{
+  color:var(--mustard);
+}
+
+.popular .section-head h2{
+  color:var(--paper);
+}
+
+.popular .section-head p{
+  color:#cbbfaa;
+}
+
+.food-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.food-card{
+  background:var(--cream);
+  color:var(--ink);
+  border:2px solid var(--ink);
+  overflow:hidden;
+  transition:.35s;
+}
+
+.food-card:hover{
+  transform:translateY(-10px) rotate(-1deg);
+  box-shadow:9px 9px 0 var(--rust);
+}
+
+.food-image{
+  height:245px;
+  overflow:hidden;
+  position:relative;
+}
+
+.food-image img{
+  height:100%;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.food-card:hover .food-image img{
+  transform:scale(1.08);
+}
+
+.food-number{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:var(--mustard);
+  border:2px solid var(--ink);
+  padding:5px 9px;
+  font-family:"Space Mono";
+  font-size:10px;
+}
+
+.food-content{
+  padding:22px;
+}
+
+.food-content h3{
+  font-family:"Anton";
+  font-size:25px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.food-content p{
+  color:#63564c;
+  font-size:15px;
+}
+
+.food-tag{
+  display:inline-block;
+  margin-top:14px;
+  color:var(--rust);
+  font-family:"Caveat";
+  font-size:21px;
+  font-weight:700;
+  transform:rotate(-3deg);
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:end;
+}
+
+.menu-list{
+  margin-top:45px;
+  border-top:2px solid var(--ink);
+}
+
+.menu-row{
+  display:grid;
+  grid-template-columns:55px 1fr auto;
+  gap:20px;
+  align-items:center;
+  padding:24px 10px;
+  border-bottom:1px dashed var(--line);
+  transition:.25s;
+}
+
+.menu-row:hover{
+  background:var(--cream);
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.menu-num{
+  font-family:"Space Mono";
+  font-size:11px;
+  color:var(--rust);
+}
+
+.menu-name{
+  font-family:"Anton";
+  font-size:24px;
+  text-transform:uppercase;
+}
+
+.menu-description{
+  color:#6a5b50;
+  font-size:14px;
+  margin-top:2px;
+}
+
+.menu-price{
+  font-family:"Space Mono";
+  color:var(--rust);
+  font-weight:bold;
+}
+
+.special-board{
+  margin-top:35px;
+  background:var(--mustard);
+  border:2px solid var(--ink);
+  padding:25px;
+  transform:rotate(-.7deg);
+  box-shadow:7px 7px 0 var(--ink);
+}
+
+.special-board h3{
+  font-family:"Anton";
+  font-size:28px;
+  text-transform:uppercase;
+}
+
+.special-board p{
+  margin-top:5px;
+}
+
+/* =========================
+   REVIEW PHOTO WALL
+========================= */
+
+.photo-wall{
+  background:var(--paper2);
+  border-top:2px solid var(--ink);
+  border-bottom:2px solid var(--ink);
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:1.4fr .8fr .8fr;
+  grid-template-rows:250px 250px;
+  gap:15px;
+}
+
+.gallery-item{
+  overflow:hidden;
+  border:2px solid var(--ink);
+  position:relative;
+}
+
+.gallery-item:first-child{
+  grid-row:span 2;
+}
+
+.gallery-item img{
+  height:100%;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.08);
+}
+
+.gallery-caption{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  background:var(--cream);
+  border:1px solid var(--ink);
+  padding:6px 10px;
+  font-family:"Caveat";
+  font-size:18px;
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.review-card{
+  background:var(--cream);
+  border:1.5px solid var(--ink);
+  padding:27px;
+  position:relative;
+  box-shadow:var(--shadow);
+  transition:.3s;
+}
+
+.review-card:hover{
+  transform:translateY(-8px) rotate(.5deg);
+}
+
+.review-card:nth-child(1){
+  transform:rotate(-1.5deg);
+}
+
+.review-card:nth-child(2){
+  transform:rotate(1deg);
+}
+
+.review-card:nth-child(3){
+  transform:rotate(-.5deg);
+}
+
+.review-card:nth-child(1):hover,
+.review-card:nth-child(2):hover,
+.review-card:nth-child(3):hover{
+  transform:translateY(-8px) rotate(0);
+}
+
+.review-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:16px;
+}
+
+.reviewer{
+  font-family:"Space Mono";
+  font-size:11px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.review-time{
+  font-family:"Space Mono";
+  font-size:9px;
+  color:#817466;
+}
+
+.review-text{
+  font-style:italic;
+  font-size:17px;
+  line-height:1.55;
+}
+
+.review-food{
+  display:inline-block;
+  margin-top:18px;
+  color:var(--rust);
+  font-family:"Caveat";
+  font-size:20px;
+  font-weight:bold;
+}
+
+.google-mark{
+  margin-top:20px;
+  padding-top:12px;
+  border-top:1px dashed var(--line);
+  font-family:"Space Mono";
+  font-size:9px;
+  color:#75695d;
+  text-transform:uppercase;
+}
+
+/* =========================
+   REVIEW HIGHLIGHTS
+========================= */
+
+.review-stats{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border:2px solid var(--ink);
+}
+
+.stat{
+  padding:30px;
+  text-align:center;
+  background:var(--cream);
+  border-right:1px dashed var(--line);
+}
+
+.stat:last-child{
+  border-right:0;
+}
+
+.stat strong{
+  display:block;
+  font-family:"Anton";
+  color:var(--rust);
+  font-size:48px;
+  line-height:1;
+}
+
+.stat span{
+  display:block;
+  font-family:"Space Mono";
+  font-size:10px;
+  text-transform:uppercase;
+  margin-top:8px;
+}
+
+/* =========================
+   VISIT
+========================= */
+
+.visit{
+  background:var(--paper2);
+  border-top:2px solid var(--ink);
+  border-bottom:2px solid var(--ink);
+}
+
+.visit-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.visit-big{
+  font-family:"Anton";
+  font-size:clamp(55px,8vw,100px);
+  line-height:.85;
+  color:var(--rust);
+}
+
+.visit-big small{
+  display:block;
+  color:var(--ink);
+  font-family:"Space Mono";
+  font-size:12px;
+  line-height:1.5;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-top:15px;
+}
+
+.visit-list{
+  border-top:2px solid var(--ink);
+}
+
+.visit-line{
+  display:flex;
+  justify-content:space-between;
+  padding:16px 0;
+  border-bottom:1px dashed var(--line);
+  font-family:"Space Mono";
+  font-size:12px;
+}
+
+.visit-line strong{
+  color:var(--rust);
+}
+
+.call-note{
+  margin-top:22px;
+  font-size:14px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  text-align:center;
+  padding:120px 0;
+}
+
+.cta h2{
+  font-family:"Anton";
+  font-size:clamp(55px,8vw,95px);
+  line-height:.9;
+  transform:rotate(-2deg);
+}
+
+.cta h2 span{
+  color:var(--rust);
+}
+
+.cta p{
+  max-width:500px;
+  margin:25px auto 30px;
+  color:#5e5148;
+}
+
+.cta-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:var(--ink);
+  color:#cfc3af;
+  padding:55px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:60px;
+  padding-bottom:35px;
+  border-bottom:1px solid #4b413b;
+}
+
+.footer-title{
+  font-family:"Anton";
+  color:var(--paper);
+  font-size:27px;
+  text-transform:uppercase;
+}
+
+.footer-desc{
+  max-width:360px;
+  margin-top:12px;
+  color:#9d9081;
+  font-size:14px;
+}
+
+.footer-col h4{
+  color:var(--mustard);
+  font-family:"Space Mono";
+  font-size:10px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+.footer-col a,
+.footer-col p{
+  display:block;
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+.footer-col a:hover{
+  color:var(--mustard);
+}
+
+.footer-bottom{
+  padding-top:22px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  font-family:"Space Mono";
+  font-size:10px;
+  color:#74695e;
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:
+    opacity .8s ease,
+    transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .navlinks{
+    display:none;
+    position:absolute;
+    top:78px;
+    right:4%;
+    width:220px;
+    padding:20px;
+    background:var(--cream);
+    border:2px solid var(--ink);
+    flex-direction:column;
+    gap:17px;
+    box-shadow:7px 7px 0 var(--rust);
+  }
+
+  .navlinks.active{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-call{
+    display:none;
+  }
+
+  .hero-grid,
+  .visit-grid,
+  .menu-intro{
+    grid-template-columns:1fr;
+  }
+
+  .hero-photo{
+    max-width:650px;
+    margin:auto;
+  }
+
+  .food-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .reviews-grid{
+    grid-template-columns:1fr;
+  }
+
+  .review-card:nth-child(1),
+  .review-card:nth-child(2),
+  .review-card:nth-child(3){
+    transform:none;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:250px 250px 250px;
+  }
+
+  .gallery-item:first-child{
+    grid-row:auto;
+    grid-column:span 2;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  body{
+    font-size:16px;
+  }
+
+  section{
+    padding:75px 0;
+  }
+
+  .hero{
+    padding:55px 0;
+  }
+
+  .hero h1{
+    font-size:60px;
+  }
+
+  .hero-photo img{
+    height:390px;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .info-box{
+    border-bottom:1px dashed var(--line);
+  }
+
+  .info-box:nth-child(2){
+    border-right:0;
+  }
+
+  .food-grid{
+    grid-template-columns:1fr;
+  }
+
+  .menu-row{
+    grid-template-columns:35px 1fr;
+  }
+
+  .menu-price{
+    grid-column:2;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+    grid-template-rows:280px 220px 220px 220px;
+  }
+
+  .gallery-item:first-child{
+    grid-column:auto;
+  }
+
+  .review-stats{
+    grid-template-columns:1fr;
+  }
+
+  .stat{
+    border-right:0;
+    border-bottom:1px dashed var(--line);
+  }
+
+  .stat:last-child{
+    border-bottom:0;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *:before,
+  *:after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+
+  .reveal{
+    opacity:1;
+    transform:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+<nav class="container">
+
+  <a href="#" class="brand">
+    <div class="logo">
+      EST.<br>
+      SANDWICH<br>
+      SHOP
+    </div>
+
+    <div>
+      <div class="brand-title">Sandwich Shop</div>
+      <div class="brand-sub">Ballinger · Texas</div>
+    </div>
+  </a>
+
+  <div class="navlinks" id="navLinks">
+    <a href="#popular">Popular</a>
+    <a href="#menu">Menu</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#visit">Visit</a>
+  </div>
+
+  <a class="btn btn-red nav-call" href="tel:+13253653383">
+    ☎ Call To Order
+  </a>
+
+  <button class="menu-toggle" id="menuToggle">
+    ☰
+  </button>
+
+</nav>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+  <div class="reveal">
+
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span>4.9 · 72 Google Reviews · $10–20</span>
+    </div>
+
+    <h1>
+      Good food.
+      <span>Good people.</span>
+    </h1>
+
+    <p class="hero-text">
+      A charming Ballinger lunch stop known for fresh food,
+      friendly service, generous sandwiches and burgers —
+      right in the heart of town.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        class="btn btn-red"
+        href="tel:+13253653383">
+        ☎ (325) 365-3383
+      </a>
+
+      <a
+        class="btn btn-light"
+        target="_blank"
+        rel="noopener"
+        href="https://www.google.com/maps/search/?api=1&query=Sandwich+Shop+Ballinger+TX+76821">
+        📍 Get Directions
+      </a>
+
+    </div>
+
+    <div class="hero-info">
+      <span><strong>Lunch</strong> · 11 AM–3 PM</span>
+      <span><strong>Price</strong> · $10–20</span>
+      <span><strong>Style</strong> · American</span>
+    </div>
+
+  </div>
+
+
+  <div class="hero-photo reveal">
+
+    <img
+      src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1200&q=85"
+      alt="Fresh sandwich">
+
+    <div class="photo-note">
+      Fresh. Local. Worth stopping for.
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INFO STRIP
+========================= -->
+
+<div class="info-strip">
+
+<div class="container info-grid">
+
+  <div class="info-box">
+    <span class="info-label">Location</span>
+    <div class="info-value">Ballinger, TX 76821</div>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">Phone</span>
+    <div class="info-value">
+      <a href="tel:+13253653383">
+        (325) 365-3383
+      </a>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">Google Rating</span>
+    <div class="info-value">4.9 ★ · 72 reviews</div>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">Typical Price</span>
+    <div class="info-value">$10 – $20</div>
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     POPULAR FROM REVIEWS
+========================= -->
+
+<section class="popular" id="popular">
+
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      Straight from the reviews
+    </div>
+
+    <h2>
+      What people<br>
+      keep talking about
+    </h2>
+
+    <p>
+      These aren't random menu guesses. These are dishes,
+      flavors and experiences specifically mentioned by
+      customers in the reviews.
+    </p>
+
+  </div>
+
+
+  <div class="food-grid">
+
+
+    <article class="food-card reveal">
+
+      <div class="food-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+          alt="Cheeseburger">
+
+        <span class="food-number">01</span>
+
+      </div>
+
+      <div class="food-content">
+
+        <h3>Cheeseburgers</h3>
+
+        <p>
+          Travelers specifically mention the burgers,
+          including the Chili Cheeseburger and
+          Mushroom Swiss.
+        </p>
+
+        <span class="food-tag">
+          burger people approved
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article class="food-card reveal">
+
+      <div class="food-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=85"
+          alt="Fresh restaurant meal">
+
+        <span class="food-number">02</span>
+
+      </div>
+
+      <div class="food-content">
+
+        <h3>Rio Grande</h3>
+
+        <p>
+          Reviewers specifically call out the Rio Grande
+          sandwich and its delicious jalapeño mayo.
+        </p>
+
+        <span class="food-tag">
+          jalapeño mayo
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article class="food-card reveal">
+
+      <div class="food-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=85"
+          alt="Fresh soup">
+
+        <span class="food-number">03</span>
+
+      </div>
+
+      <div class="food-content">
+
+        <h3>Broccoli Cheese Soup</h3>
+
+        <p>
+          One reviewer called it the best cheese broccoli
+          soup they've had — even better than larger restaurants.
+        </p>
+
+        <span class="food-tag">
+          reviewer favorite
+        </span>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section id="menu">
+
+<div class="container">
+
+  <div class="menu-intro">
+
+    <div class="section-head reveal">
+
+      <div class="eyebrow">
+        The board
+      </div>
+
+      <h2>
+        Menu<br>
+        favorites
+      </h2>
+
+    </div>
+
+    <div class="reveal">
+
+      <p>
+        A cleaner menu presentation based on the dishes
+        customers actually mentioned in the supplied reviews.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="menu-list reveal">
+
+
+    <div class="menu-row">
+
+      <div class="menu-num">01</div>
+
+      <div>
+        <div class="menu-name">
+          Mushroom Swiss Burger
+        </div>
+
+        <div class="menu-description">
+          A customer described it as one of the best burgers
+          they've ever had.
+        </div>
+      </div>
+
+      <div class="menu-price">
+        ★ FAVORITE
+      </div>
+
+    </div>
+
+
+    <div class="menu-row">
+
+      <div class="menu-num">02</div>
+
+      <div>
+        <div class="menu-name">
+          Chili Cheeseburger
+        </div>
+
+        <div class="menu-description">
+          A messy, hearty burger that travelers specifically
+          stopped in to try.
+        </div>
+      </div>
+
+      <div class="menu-price">
+        POPULAR
+      </div>
+
+    </div>
+
+
+    <div class="menu-row">
+
+      <div class="menu-num">03</div>
+
+      <div>
+        <div class="menu-name">
+          The Reuben
+        </div>
+
+        <div class="menu-description">
+          Mentioned by reviewers as an excellent choice
+          for lunch.
+        </div>
+      </div>
+
+      <div class="menu-price">
+        ★
+      </div>
+
+    </div>
+
+
+    <div class="menu-row">
+
+      <div class="menu-num">04</div>
+
+      <div>
+        <div class="menu-name">
+          Rio Grande Sandwich
+        </div>
+
+        <div class="menu-description">
+          A customer specifically praised the jalapeño mayo.
+        </div>
+      </div>
+
+      <div class="menu-price">
+        SPICY
+      </div>
+
+    </div>
+
+
+    <div class="menu-row">
+
+      <div class="menu-num">05</div>
+
+      <div>
+        <div class="menu-name">
+          Homemade Chicken Salad
+        </div>
+
+        <div class="menu-description">
+          Homemade chicken salad paired with chips.
+        </div>
+      </div>
+
+      <div class="menu-price">
+        HOMEMADE
+      </div>
+
+    </div>
+
+
+    <div class="menu-row">
+
+      <div class="menu-num">06</div>
+
+      <div>
+        <div class="menu-name">
+          Monterey Chicken Sandwich
+        </div>
+
+        <div class="menu-description">
+          A reviewer specifically mentioned trying
+          the Monterey chicken sandwich.
+        </div>
+      </div>
+
+      <div class="menu-price">
+        ★
+      </div>
+
+    </div>
+
+
+    <div class="menu-row">
+
+      <div class="menu-num">07</div>
+
+      <div>
+        <div class="menu-name">
+          Cheese Broccoli Soup
+        </div>
+
+        <div class="menu-description">
+          A standout soup praised by reviewers.
+        </div>
+      </div>
+
+      <div class="menu-price">
+        FAVORITE
+      </div>
+
+    </div>
+
+
+    <div class="menu-row">
+
+      <div class="menu-num">08</div>
+
+      <div>
+        <div class="menu-name">
+          Grilled Catfish & Rice
+        </div>
+
+        <div class="menu-description">
+          Specifically mentioned in customer reviews
+          as very tasty.
+        </div>
+      </div>
+
+      <div class="menu-price">
+        ★
+      </div>
+
+    </div>
+
+
+    <div class="menu-row">
+
+      <div class="menu-num">09</div>
+
+      <div>
+        <div class="menu-name">
+          Fresh Cookies
+        </div>
+
+        <div class="menu-description">
+          Reviewers warn that the cookies can disappear
+          quickly when the daily supply runs out.
+        </div>
+      </div>
+
+      <div class="menu-price">
+        FRESH
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="special-board reveal">
+
+    <h3>
+      Today's special board
+    </h3>
+
+    <p>
+      Daily specials and fresh cookies are limited —
+      if you see them, don't wait too long.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PHOTO WALL
+========================= -->
+
+<section class="photo-wall">
+
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      The Sandwich Shop experience
+    </div>
+
+    <h2>
+      More than<br>
+      a sandwich
+    </h2>
+
+    <p>
+      Customers repeatedly mention the old building,
+      friendly service, small-town atmosphere and
+      fresh food.
+    </p>
+
+  </div>
+
+
+  <div class="gallery reveal">
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
+        alt="Restaurant interior">
+
+      <span class="gallery-caption">
+        Old-school charm
+      </span>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85"
+        alt="Burger">
+
+      <span class="gallery-caption">
+        Come hungry
+      </span>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85"
+        alt="Sandwich">
+
+      <span class="gallery-caption">
+        Fresh lunch
+      </span>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=85"
+        alt="Fresh cookies">
+
+      <span class="gallery-caption">
+        Don't miss the cookies
+      </span>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=85"
+        alt="Soup">
+
+      <span class="gallery-caption">
+        Homemade comfort
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section id="reviews">
+
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      Word around town
+    </div>
+
+    <h2>
+      Real customers.<br>
+      Real love.
+    </h2>
+
+    <p>
+      Selected comments from the Google reviews you provided.
+    </p>
+
+  </div>
+
+
+  <div class="reviews-grid">
+
+
+    <article class="review-card reveal">
+
+      <div class="review-top">
+
+        <span class="reviewer">
+          Sara B.
+        </span>
+
+        <span class="review-time">
+          4 months ago
+        </span>
+
+      </div>
+
+      <span class="stars">
+        ★★★★★
+      </span>
+
+      <p class="review-text">
+        “Charmer with good grub right along the main
+        thoroughfare... Excellent Reuben.”
+      </p>
+
+      <span class="review-food">
+        → The Reuben
+      </span>
+
+      <div class="google-mark">
+        Google Review · Local Guide
+      </div>
+
+    </article>
+
+
+    <article class="review-card reveal">
+
+      <div class="review-top">
+
+        <span class="reviewer">
+          Daddykirbs Farm
+        </span>
+
+        <span class="review-time">
+          6 months ago
+        </span>
+
+      </div>
+
+      <span class="stars">
+        ★★★★★
+      </span>
+
+      <p class="review-text">
+        “I was craving a good burger while traveling
+        through Ballinger... My choice was the
+        Chili Cheeseburger.”
+      </p>
+
+      <span class="review-food">
+        → Chili Cheeseburger
+      </span>
+
+      <div class="google-mark">
+        Google Review · Local Guide
+      </div>
+
+    </article>
+
+
+    <article class="review-card reveal">
+
+      <div class="review-top">
+
+        <span class="reviewer">
+          Joseph P.
+        </span>
+
+        <span class="review-time">
+          3 years ago
+        </span>
+
+      </div>
+
+      <span class="stars">
+        ★★★★★
+      </span>
+
+      <p class="review-text">
+        “One of the best burgers I've ever had.
+        I got the Mushroom Swiss...”
+      </p>
+
+      <span class="review-food">
+        → Mushroom Swiss
+      </span>
+
+      <div class="google-mark">
+        Google Review
+      </div>
+
+    </article>
+
+
+    <article class="review-card reveal">
+
+      <div class="review-top">
+
+        <span class="reviewer">
+          LL L.
+        </span>
+
+        <span class="review-time">
+          1 year ago
+        </span>
+
+      </div>
+
+      <span class="stars">
+        ★★★★★
+      </span>
+
+      <p class="review-text">
+        “A little nostalgia mixed in with good food
+        is always a win in my book... the jalapeño
+        mayo was delightful.”
+      </p>
+
+      <span class="review-food">
+        → Rio Grande
+      </span>
+
+      <div class="google-mark">
+        Google Review · Local Guide
+      </div>
+
+    </article>
+
+
+    <article class="review-card reveal">
+
+      <div class="review-top">
+
+        <span class="reviewer">
+          rthh
+        </span>
+
+        <span class="review-time">
+          1 year ago
+        </span>
+
+      </div>
+
+      <span class="stars">
+        ★★★★★
+      </span>
+
+      <p class="review-text">
+        “Best cheese broccoli soup I've had even
+        better than bigger restaurants.”
+      </p>
+
+      <span class="review-food">
+        → Cheese Broccoli Soup
+      </span>
+
+      <div class="google-mark">
+        Google Review
+      </div>
+
+    </article>
+
+
+    <article class="review-card reveal">
+
+      <div class="review-top">
+
+        <span class="reviewer">
+          Valerie C.
+        </span>
+
+        <span class="review-time">
+          1 month ago
+        </span>
+
+      </div>
+
+      <span class="stars">
+        ★★★★★
+      </span>
+
+      <p class="review-text">
+        “A must stop. Food made fresh. When the daily
+        special and cookies run out, that's on you.”
+      </p>
+
+      <span class="review-food">
+        → Fresh Daily Specials
+      </span>
+
+      <div class="google-mark">
+        Google Review · Local Guide
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <div class="review-stats reveal">
+
+    <div class="stat">
+      <strong>4.9</strong>
+      <span>Google Rating</span>
+    </div>
+
+    <div class="stat">
+      <strong>72</strong>
+      <span>Google Reviews</span>
+    </div>
+
+    <div class="stat">
+      <strong>★</strong>
+      <span>Local Favorite</span>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     VISIT
+========================= -->
+
+<section class="visit" id="visit">
+
+<div class="container visit-grid">
+
+  <div class="reveal">
+
+    <div class="eyebrow">
+      Plan your stop
+    </div>
+
+    <div class="visit-big">
+      WORTH<br>
+      THE STOP
+
+      <small>
+        A small-town lunch stop<br>
+        with big personality.
+      </small>
+    </div>
+
+  </div>
+
+
+  <div class="reveal">
+
+    <div class="visit-list">
+
+      <div class="visit-line">
+        <span>Location</span>
+        <strong>Ballinger, TX</strong>
+      </div>
+
+      <div class="visit-line">
+        <span>Lunch</span>
+        <strong>~11 AM–3 PM</strong>
+      </div>
+
+      <div class="visit-line">
+        <span>Price</span>
+        <strong>$10–20</strong>
+      </div>
+
+      <div class="visit-line">
+        <span>Rating</span>
+        <strong>4.9 ★</strong>
+      </div>
+
+      <div class="visit-line">
+        <span>Reviews</span>
+        <strong>72 Google</strong>
+      </div>
+
+    </div>
+
+    <p class="call-note">
+      Hours can change around holidays or special events.
+      Call ahead before making a long drive.
+    </p>
+
+    <br>
+
+    <a
+      href="tel:+13253653383"
+      class="btn btn-red">
+      ☎ Call (325) 365-3383
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<div class="container reveal">
+
+  <h2>
+    Come hungry.<br>
+    <span>Leave happy.</span>
+  </h2>
+
+  <p>
+    Fresh food, friendly people and a little
+    Ballinger nostalgia. That's a pretty good
+    reason to stop in.
+  </p>
+
+  <div class="cta-buttons">
+
+    <a
+      href="tel:+13253653383"
+      class="btn btn-red">
+      ☎ Call To Order
+    </a>
+
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=Sandwich+Shop+Ballinger+TX+76821"
+      target="_blank"
+      rel="noopener"
+      class="btn btn-light">
+      📍 Get Directions
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+  <div class="footer-grid">
+
+    <div>
+
+      <div class="footer-title">
+        Sandwich Shop
+      </div>
+
+      <p class="footer-desc">
+        A beloved Ballinger lunch stop known for
+        fresh food, friendly service and a charming
+        small-town atmosphere.
+      </p>
+
+    </div>
+
+
+    <div class="footer-col">
+
+      <h4>Visit</h4>
+
+      <p>
+        Ballinger, TX 76821
+      </p>
+
+      <a href="tel:+13253653383">
+        (325) 365-3383
+      </a>
+
+    </div>
+
+
+    <div class="footer-col">
+
+      <h4>Explore</h4>
+
+      <a href="#popular">Popular</a>
+
+      <a href="#menu">Menu</a>
+
+      <a href="#reviews">Reviews</a>
+
+      <a href="#visit">Visit</a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 Sandwich Shop · Ballinger, Texas
+    </span>
+
+    <span>
+      4.9 ★ · 72 Google Reviews
+    </span>
+
+  </div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll(".navlinks a").forEach(link => {
+
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+revealElements.forEach(el => {
+  observer.observe(el);
+});
+
+
+/* =========================
+   STAGGER FOOD CARDS
+========================= */
+
+document
+.querySelectorAll(".food-card")
+.forEach((card,index)=>{
+
+  card.style.transitionDelay =
+    `${index * 100}ms`;
+
+});
+
+
+/* =========================
+   STAGGER REVIEWS
+========================= */
+
+document
+.querySelectorAll(".review-card")
+.forEach((card,index)=>{
+
+  card.style.transitionDelay =
+    `${index * 80}ms`;
+
+});
+
+
+/* =========================
+   PARALLAX HERO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+  const heroImage =
+    document.querySelector(".hero-photo");
+
+  if(!heroImage) return;
+
+  const scroll =
+    window.scrollY;
+
+  if(scroll < 700){
+
+    heroImage.style.transform =
+      `translateY(${scroll * .05}px) rotate(2deg)`;
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
